@@ -1,11 +1,11 @@
 import { View, Text, Button } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../hooks/redux-hook';
 import { userLogoutAction } from '../../redux/reducers/user/actions';
 import { State } from '../../redux/reducers/user';
 
 const StackDefault = () => {
-  const profile = useSelector((state: any) => state?.profile as State);
-  const dispatch = useDispatch();
+  const profile = useAppSelector((state) => state?.profile as State);
+  const dispatch = useAppDispatch();
 
   return (
     <View>

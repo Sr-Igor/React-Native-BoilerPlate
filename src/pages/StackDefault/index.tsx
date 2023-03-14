@@ -1,14 +1,14 @@
 import { View, Text, Button } from 'react-native';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../hooks/redux-hook';
 import { userLoginAction } from '../../redux/reducers/user/actions';
 import { State } from '../../redux/reducers/user';
 
 const StackDefault = (props: {
   navigation: { navigate: (arg0: string, arg1: { name: string }) => void };
 }) => {
-  const profile = useSelector((state: any) => state?.profile as State);
-  const dispatch = useDispatch();
+  const profile = useAppSelector((state) => state?.profile as State);
+  const dispatch = useAppDispatch();
 
   const handleNavigate = () => {
     props.navigation.navigate('TabDefault', { name: 'TabDefault' });
